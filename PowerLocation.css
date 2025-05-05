@@ -1,0 +1,639 @@
+/* Global */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #0000ff;
+}
+
+/* Liens */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    border-bottom: 1px solid #0000ff;
+    box-shadow: 0 0 10px #0000ff44;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.company-name {
+    font-size: 1.5rem;
+    color: #0000ff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.company-name span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #0000ff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    color: #0000ff;
+}
+
+.nav-links li a:hover {
+    background-color: #000044;
+    color: #ffffff;
+    box-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff;
+    transform: scale(1.05);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    border: 1px solid #0000ff;
+    border-radius: 5px;
+    list-style: none;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #0000ff;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #000033;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Accueil */
+#accueil {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+#accueil h1 {
+    font-size: 3rem;
+    color: #0000ff;
+    text-shadow: 0 0 15px #0000ff66;
+}
+
+#accueil p {
+    font-size: 1.2rem;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Bouton futuriste */
+.btn-primary {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0000ff;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0000ff99;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3333ff;
+    box-shadow: 0 0 20px #3333ff, 0 0 40px #0000ff;
+    transform: scale(1.05);
+}
+
+/* Section "À propos" */
+#about-box {
+    padding-top: 40px; /* Espacement entre l'image et cette section */
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.about-content {
+    color: #ffffff;
+    max-width: 900px; /* Largeur ajustée */
+    width: 100%;
+    background-color: #000000; /* Fond noir */
+    padding: 40px;
+    text-align: center;
+    border: 3px solid #0000ff; /* Bordure bleue */
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5); /* Ombre douce */
+    border-radius: 10px;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #0000ff;
+    text-shadow: 0 0 10px #0000ff;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+
+/* Accueil avec image */
+.background-image {
+    background-image: url('./R.jpg'); /* Mets ici ton image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.0);
+    color: #0000ff;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 50px; /* Déplace le texte de 50px du haut de la page */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 10px #0000ff;
+    margin-bottom: 20px;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    max-width: 800px;
+}
+
+/* Section des modèles */
+#models {
+    padding: 60px 20px;
+    background-color: #000000;
+    color: #0000ff;
+    text-align: center;
+}
+
+.models-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.model-card {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.model-card a {
+    display: block;
+}
+
+.model-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.model-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.7);
+}
+
+.model-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Effet futuriste sur l'image au survol */
+.model-card img {
+    transition: all 0.3s ease-in-out;
+}
+
+.model-card img:hover {
+    transform: scale(1.1) rotate(10deg); /* Légère rotation pour un effet dynamique */
+}
+
+/* Texte hover avec effets lumineux */
+.model-card h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 15px #0000ff, 0 0 25px #0000ff;
+}
+
+/* FAQ futuriste */
+#faq {
+    padding: 60px 20px;
+    background-color: #000;
+    color: #0000ff;
+    text-align: center;
+    border-top: 2px solid #0000ff;
+    margin-top: 60px;
+    box-shadow: inset 0 0 30px #0000ff33;
+}
+
+.faq-title {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #0000ff;
+    text-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Container en grille responsive */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-card {
+    background-color: #0a0a0a;
+    border: 2px solid #0000ff;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+    box-shadow: 0 0 20px #0000ff55;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+}
+
+.faq-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 25px #0000ffcc, 0 0 40px #0000ff99;
+}
+
+.faq-card h3 {
+    font-size: 1.4rem;
+    color: #0000ff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #0000ff;
+}
+
+.faq-card p {
+    font-size: 1.1rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+#modalites {
+    background-color: #000;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.modalites-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #111;
+    border: 3px solid #0000ff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 0 25px rgba(0, 0, 255, 0.5);
+    color: #fff;
+}
+
+#modalites h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #0000ff;
+    color: #0000ff;
+}
+
+.modalites-text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.modalites-list {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+.modalites-list li {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #ddd;
+}
+
+#contact {
+    background-color: #000;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #111;
+    border: 3px solid #0000ff;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 0 25px rgba(0, 0, 255, 0.5);
+    color: #fff;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #0000ff;
+    color: #0000ff;
+}
+
+.contact-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-box {
+    flex: 1;
+    min-width: 200px;
+    background-color: #000;
+    border: 2px solid #0000ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.3);
+}
+
+.contact-box h3 {
+    color: #0000ff;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    text-shadow: 0 0 10px #0000ff;
+}
+
+.contact-box p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Lamborghini */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; /* Fond noir pour l'ensemble de la page */
+    color: #ffffff;
+    height: 100vh;  /* S'assurer que la page prend toute la hauteur */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;  /* Fond noir */
+    padding: 20px;
+    margin-bottom: 20px; /* Ajoute un peu d'espace entre l'en-tête et le contenu */
+}
+
+header img {
+    max-height: 80px;  /* Contrôle la taille du logo */
+    width: auto;
+}
+
+#lambo-gallery {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.car-card {
+    width: 48%;  /* Deux voitures côte à côte */
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    padding-bottom: 10px;
+}
+
+.car-card img {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.car-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff; /* Texte du prix en blanc */
+    margin-bottom: 15px;
+}
+
+/* Hover effect */
+.car-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.6);
+}
+
+.car-card:hover img {
+    transform: scale(1.05);
+    border: 5px solid #0000ff; /* Contour bleu de l'image */
+}
+
+/* Button */
+.btn-primary {
+    padding: 15px 30px;
+    background-color: #0000ff;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0000ff99;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3333ff;
+    box-shadow: 0 0 20px #3333ff, 0 0 40px #0000ff;
+    transform: scale(1.05);
+}
+
+/* Fixe la navbar en haut de la page */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Assure-toi que la navbar sera toujours au-dessus des autres éléments */
+    background-color: #000; /* Couleur de fond de la navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Légère ombre sous la navbar */
+    transition: background-color 0.3s ease; /* Douce transition pour les changements de couleur */
+}
+
+/* Si la page est scrollée, change la couleur de la navbar */
+nav.scrolled {
+    background-color: #333; /* Change la couleur de fond de la navbar quand on fait défiler la page */
+}
+
+/* Le contenu de la page doit être décalé vers le bas pour ne pas se cacher sous la navbar */
+body {
+    padding-top: 0px; /* Ajuste la hauteur pour que le contenu ne soit pas caché sous la navbar */
+}
+
+/* Style de la barre de navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;  /* La barre prend toute la largeur de la fenêtre */
+    background-color: transparent;
+    padding: 10px 20px;  /* Espacement pour le contenu, 20px de chaque côté */
+    box-sizing: border-box;  /* Inclut la marge/padding dans la largeur totale */
+    z-index: 1000;  /* Assure que la barre de navigation soit au-dessus du contenu */
+    transition: background-color 0.3s ease;
+}
+
+/* Lorsque la page est scrollée */
+nav.scrolled {
+    background-color: #000000; /* Fond noir lorsqu'on a scrollé */
+    color: #ffffff; /* Texte blanc pour mieux contraster */
+}
+
+.car-card img {
+    transition: transform 0.3s ease;
+}
+
+.car-card:hover img {
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.glowing-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 15px #00baff, 0 0 30px #00baff;
+    transition: text-shadow 0.3s ease;
+}
+
+.car-card:hover .glowing-text {
+    text-shadow: 0 0 15px #ffffff, 0 0 30px #00baff, 0 0 50px #00baff;
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-primary {
+    padding: 15px 30px;
+    background-color: #0000ff;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0000ff99;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #3333ff;
+    box-shadow: 0 0 20px #3333ff, 0 0 40px #0000ff;
+    transform: scale(1.05);
+}
+
+.car-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.car-card img {
+    transition: transform 0.3s ease;
+}
+
+.car-card:hover img {
+    transform: translateX(-10px);
+}
+
